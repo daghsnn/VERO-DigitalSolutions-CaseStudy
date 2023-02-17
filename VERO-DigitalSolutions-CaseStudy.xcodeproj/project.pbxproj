@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74206C11A606AE5B599E2EC2 /* Pods_VERO_DigitalSolutions_CaseStudyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7117AE06D780F97FAEBD5E /* Pods_VERO_DigitalSolutions_CaseStudyTests.framework */; };
+		8DA2F376193754F32AC706E3 /* Pods_VERO_DigitalSolutions_CaseStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0A49FAAF31D54F7B60577 /* Pods_VERO_DigitalSolutions_CaseStudy.framework */; };
 		A9655A3029A00282006897F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A2F29A00282006897F1 /* AppDelegate.swift */; };
 		A9655A3229A00282006897F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A3129A00282006897F1 /* SceneDelegate.swift */; };
-		A9655A3429A00282006897F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A3329A00282006897F1 /* ViewController.swift */; };
-		A9655A3729A00282006897F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9655A3529A00282006897F1 /* Main.storyboard */; };
 		A9655A3929A00285006897F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9655A3829A00285006897F1 /* Assets.xcassets */; };
 		A9655A3C29A00285006897F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9655A3A29A00285006897F1 /* LaunchScreen.storyboard */; };
 		A9655A4729A00285006897F1 /* VERO_DigitalSolutions_CaseStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A4629A00285006897F1 /* VERO_DigitalSolutions_CaseStudyTests.swift */; };
 		A9655A5129A00285006897F1 /* VERO_DigitalSolutions_CaseStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A5029A00285006897F1 /* VERO_DigitalSolutions_CaseStudyUITests.swift */; };
 		A9655A5329A00285006897F1 /* VERO_DigitalSolutions_CaseStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A5229A00285006897F1 /* VERO_DigitalSolutions_CaseStudyUITestsLaunchTests.swift */; };
+		A9655A7029A004E0006897F1 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A6F29A004E0006897F1 /* Extension+UIView.swift */; };
+		A9655A7829A00A49006897F1 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A7229A00A49006897F1 /* LoginPresenter.swift */; };
+		A9655A7929A00A49006897F1 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A7329A00A49006897F1 /* LoginWorker.swift */; };
+		A9655A7A29A00A49006897F1 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A7429A00A49006897F1 /* LoginRouter.swift */; };
+		A9655A7B29A00A49006897F1 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A7529A00A49006897F1 /* LoginModels.swift */; };
+		A9655A7C29A00A49006897F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A7629A00A49006897F1 /* LoginViewController.swift */; };
+		A9655A7D29A00A49006897F1 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A7729A00A49006897F1 /* LoginInteractor.swift */; };
+		A9655A7F29A00FFF006897F1 /* Extension+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A7E29A00FFF006897F1 /* Extension+UserDefaults.swift */; };
+		A9655A8229A010E9006897F1 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A8129A010E9006897F1 /* ReachabilityManager.swift */; };
+		A9655A8829A01954006897F1 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A8729A01954006897F1 /* Extension+UIColor.swift */; };
+		CD77DA87950FD1DB55E30663 /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD994402A5561EE5AD938B8B /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DE973EF9DE27C1E226F3E99 /* Pods-VERO-DigitalSolutions-CaseStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudy.release.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy/Pods-VERO-DigitalSolutions-CaseStudy.release.xcconfig"; sourceTree = "<group>"; };
+		6601F0042D2FF82C4A73E5AF /* Pods-VERO-DigitalSolutions-CaseStudyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudyTests.release.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudyTests/Pods-VERO-DigitalSolutions-CaseStudyTests.release.xcconfig"; sourceTree = "<group>"; };
+		736DF959BB2C65F8BF80211E /* Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.release.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B7117AE06D780F97FAEBD5E /* Pods_VERO_DigitalSolutions_CaseStudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VERO_DigitalSolutions_CaseStudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8B0A49FAAF31D54F7B60577 /* Pods_VERO_DigitalSolutions_CaseStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VERO_DigitalSolutions_CaseStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9655A2C29A00282006897F1 /* VERO-DigitalSolutions-CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VERO-DigitalSolutions-CaseStudy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9655A2F29A00282006897F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9655A3129A00282006897F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A9655A3329A00282006897F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A9655A3629A00282006897F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9655A3829A00285006897F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9655A3B29A00285006897F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9655A3D29A00285006897F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +63,20 @@
 		A9655A4C29A00285006897F1 /* VERO-DigitalSolutions-CaseStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VERO-DigitalSolutions-CaseStudyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9655A5029A00285006897F1 /* VERO_DigitalSolutions_CaseStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VERO_DigitalSolutions_CaseStudyUITests.swift; sourceTree = "<group>"; };
 		A9655A5229A00285006897F1 /* VERO_DigitalSolutions_CaseStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VERO_DigitalSolutions_CaseStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9655A6F29A004E0006897F1 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		A9655A7229A00A49006897F1 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		A9655A7329A00A49006897F1 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
+		A9655A7429A00A49006897F1 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		A9655A7529A00A49006897F1 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		A9655A7629A00A49006897F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A9655A7729A00A49006897F1 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		A9655A7E29A00FFF006897F1 /* Extension+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UserDefaults.swift"; sourceTree = "<group>"; };
+		A9655A8129A010E9006897F1 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		A9655A8729A01954006897F1 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		AA9E345D1F8CBF703A1F8BB1 /* Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy/Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		ACC9E2A4ECFF3B75A4154D00 /* Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudyTests/Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD994402A5561EE5AD938B8B /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D524252DECDD8043247AA5CF /* Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.debug.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA2F376193754F32AC706E3 /* Pods_VERO_DigitalSolutions_CaseStudy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74206C11A606AE5B599E2EC2 /* Pods_VERO_DigitalSolutions_CaseStudyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +100,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD77DA87950FD1DB55E30663 /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57496D497CBF414005961815 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA9E345D1F8CBF703A1F8BB1 /* Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig */,
+				3DE973EF9DE27C1E226F3E99 /* Pods-VERO-DigitalSolutions-CaseStudy.release.xcconfig */,
+				D524252DECDD8043247AA5CF /* Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.debug.xcconfig */,
+				736DF959BB2C65F8BF80211E /* Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.release.xcconfig */,
+				ACC9E2A4ECFF3B75A4154D00 /* Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig */,
+				6601F0042D2FF82C4A73E5AF /* Pods-VERO-DigitalSolutions-CaseStudyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5E6FB8671A779DF75AAC8C22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8B0A49FAAF31D54F7B60577 /* Pods_VERO_DigitalSolutions_CaseStudy.framework */,
+				AD994402A5561EE5AD938B8B /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework */,
+				9B7117AE06D780F97FAEBD5E /* Pods_VERO_DigitalSolutions_CaseStudyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9655A2329A00282006897F1 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +137,8 @@
 				A9655A4529A00285006897F1 /* VERO-DigitalSolutions-CaseStudyTests */,
 				A9655A4F29A00285006897F1 /* VERO-DigitalSolutions-CaseStudyUITests */,
 				A9655A2D29A00282006897F1 /* Products */,
+				57496D497CBF414005961815 /* Pods */,
+				5E6FB8671A779DF75AAC8C22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +155,11 @@
 		A9655A2E29A00282006897F1 /* VERO-DigitalSolutions-CaseStudy */ = {
 			isa = PBXGroup;
 			children = (
+				A9655A8029A010D3006897F1 /* Network */,
+				A9655A7129A00A0E006897F1 /* LoginScene */,
+				A9655A6E29A004BA006897F1 /* Extensions */,
 				A9655A2F29A00282006897F1 /* AppDelegate.swift */,
 				A9655A3129A00282006897F1 /* SceneDelegate.swift */,
-				A9655A3329A00282006897F1 /* ViewController.swift */,
-				A9655A3529A00282006897F1 /* Main.storyboard */,
 				A9655A3829A00285006897F1 /* Assets.xcassets */,
 				A9655A3A29A00285006897F1 /* LaunchScreen.storyboard */,
 				A9655A3D29A00285006897F1 /* Info.plist */,
@@ -127,6 +184,37 @@
 			path = "VERO-DigitalSolutions-CaseStudyUITests";
 			sourceTree = "<group>";
 		};
+		A9655A6E29A004BA006897F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A9655A6F29A004E0006897F1 /* Extension+UIView.swift */,
+				A9655A7E29A00FFF006897F1 /* Extension+UserDefaults.swift */,
+				A9655A8729A01954006897F1 /* Extension+UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9655A7129A00A0E006897F1 /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				A9655A7229A00A49006897F1 /* LoginPresenter.swift */,
+				A9655A7329A00A49006897F1 /* LoginWorker.swift */,
+				A9655A7429A00A49006897F1 /* LoginRouter.swift */,
+				A9655A7529A00A49006897F1 /* LoginModels.swift */,
+				A9655A7629A00A49006897F1 /* LoginViewController.swift */,
+				A9655A7729A00A49006897F1 /* LoginInteractor.swift */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		A9655A8029A010D3006897F1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A9655A8129A010E9006897F1 /* ReachabilityManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9655A5629A00285006897F1 /* Build configuration list for PBXNativeTarget "VERO-DigitalSolutions-CaseStudy" */;
 			buildPhases = (
+				2C88F4BBEBC7E5CAD3724292 /* [CP] Check Pods Manifest.lock */,
 				A9655A2829A00282006897F1 /* Sources */,
 				A9655A2929A00282006897F1 /* Frameworks */,
 				A9655A2A29A00282006897F1 /* Resources */,
+				FE72F0C4D8B64E00381C5045 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9655A5929A00285006897F1 /* Build configuration list for PBXNativeTarget "VERO-DigitalSolutions-CaseStudyTests" */;
 			buildPhases = (
+				1283262E6A59BBB25E6D589D /* [CP] Check Pods Manifest.lock */,
 				A9655A3E29A00285006897F1 /* Sources */,
 				A9655A3F29A00285006897F1 /* Frameworks */,
 				A9655A4029A00285006897F1 /* Resources */,
@@ -169,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9655A5C29A00285006897F1 /* Build configuration list for PBXNativeTarget "VERO-DigitalSolutions-CaseStudyUITests" */;
 			buildPhases = (
+				0A00CBE4598A146D7E62A56D /* [CP] Check Pods Manifest.lock */,
 				A9655A4829A00285006897F1 /* Sources */,
 				A9655A4929A00285006897F1 /* Frameworks */,
 				A9655A4A29A00285006897F1 /* Resources */,
+				E4197017E016280D8AA572A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +326,6 @@
 			files = (
 				A9655A3C29A00285006897F1 /* LaunchScreen.storyboard in Resources */,
 				A9655A3929A00285006897F1 /* Assets.xcassets in Resources */,
-				A9655A3729A00282006897F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +345,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A00CBE4598A146D7E62A56D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1283262E6A59BBB25E6D589D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VERO-DigitalSolutions-CaseStudyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C88F4BBEBC7E5CAD3724292 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VERO-DigitalSolutions-CaseStudy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4197017E016280D8AA572A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE72F0C4D8B64E00381C5045 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy/Pods-VERO-DigitalSolutions-CaseStudy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy/Pods-VERO-DigitalSolutions-CaseStudy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy/Pods-VERO-DigitalSolutions-CaseStudy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9655A2829A00282006897F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9655A3429A00282006897F1 /* ViewController.swift in Sources */,
+				A9655A7C29A00A49006897F1 /* LoginViewController.swift in Sources */,
+				A9655A7829A00A49006897F1 /* LoginPresenter.swift in Sources */,
+				A9655A7029A004E0006897F1 /* Extension+UIView.swift in Sources */,
+				A9655A8229A010E9006897F1 /* ReachabilityManager.swift in Sources */,
+				A9655A7F29A00FFF006897F1 /* Extension+UserDefaults.swift in Sources */,
+				A9655A7929A00A49006897F1 /* LoginWorker.swift in Sources */,
+				A9655A7B29A00A49006897F1 /* LoginModels.swift in Sources */,
 				A9655A3029A00282006897F1 /* AppDelegate.swift in Sources */,
+				A9655A7D29A00A49006897F1 /* LoginInteractor.swift in Sources */,
+				A9655A7A29A00A49006897F1 /* LoginRouter.swift in Sources */,
 				A9655A3229A00282006897F1 /* SceneDelegate.swift in Sources */,
+				A9655A8829A01954006897F1 /* Extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +501,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A9655A3529A00282006897F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9655A3629A00282006897F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A9655A3A29A00285006897F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,6 +628,7 @@
 		};
 		A9655A5729A00285006897F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA9E345D1F8CBF703A1F8BB1 /* Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -442,9 +639,8 @@
 				INFOPLIST_FILE = "VERO-DigitalSolutions-CaseStudy/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,14 +648,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hasan.VERO-DigitalSolutions-CaseStudy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A9655A5829A00285006897F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DE973EF9DE27C1E226F3E99 /* Pods-VERO-DigitalSolutions-CaseStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -470,9 +670,8 @@
 				INFOPLIST_FILE = "VERO-DigitalSolutions-CaseStudy/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,14 +679,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hasan.VERO-DigitalSolutions-CaseStudy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		A9655A5A29A00285006897F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACC9E2A4ECFF3B75A4154D00 /* Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +711,7 @@
 		};
 		A9655A5B29A00285006897F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6601F0042D2FF82C4A73E5AF /* Pods-VERO-DigitalSolutions-CaseStudyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +732,7 @@
 		};
 		A9655A5D29A00285006897F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D524252DECDD8043247AA5CF /* Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +751,7 @@
 		};
 		A9655A5E29A00285006897F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 736DF959BB2C65F8BF80211E /* Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

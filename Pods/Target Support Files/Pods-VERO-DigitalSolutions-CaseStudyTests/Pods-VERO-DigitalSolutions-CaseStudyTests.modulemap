@@ -1,0 +1,6 @@
+framework module Pods_VERO_DigitalSolutions_CaseStudyTests {
+  umbrella header "Pods-VERO-DigitalSolutions-CaseStudyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

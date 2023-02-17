@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests : NSObject
+@end
+@implementation PodsDummy_Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests
+@end
