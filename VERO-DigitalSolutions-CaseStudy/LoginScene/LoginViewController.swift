@@ -15,12 +15,25 @@ protocol LoginDisplayLogic: AnyObject {
 }
 
 final class LoginViewController: UIViewController {
+    // MARK: Varibles
     @Published private var username : String = ""
     @Published private var password : String = ""
+    private var cancellable:Set<AnyCancellable> = []
     
+    private var validatedCredentials: AnyPublisher<(String, String)?, Never> {
+        return Publishers.CombineLatest($username, $password)
+            .receive(on: RunLoop.main)
+            .map { username, password in
+                return username != "" && password != "" ? (username, password) : nil
+            }
+            .eraseToAnyPublisher()
+    }
     
-    var interactor: LoginBusinessLogic?
-    var router: (LoginRoutingLogic & LoginDataPassing)?
+    // MARK: Design Pattern Varibles
+
+    private var interactor: LoginBusinessLogic?
+    private var router: (LoginRoutingLogic & LoginDataPassing)?
+
     // MARK: UI Elements
     
     private lazy var usernameLabel : UILabel = {
@@ -129,19 +142,17 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        validatedCredentials.map{ self.configureButtonColors(isEnable: $0 != nil)
+            return $0 != nil}
+        .receive(on: RunLoop.main)
+        .assign(to: \.isEnabled, on: loginButton)
+        .store(in: &cancellable)
         configureUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = loginButton.bounds
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        gradientLayer.colors = [UIColor(red: 0.446, green: 0.873, blue: 0.771, alpha: 1).cgColor, UIColor(red: 0.112, green: 0.87, blue: 0.488, alpha: 1).cgColor]
-        gradientLayer.masksToBounds = true
-        loginButton.layer.insertSublayer(gradientLayer, at: 0)
-        loginButton.makeShadow(color: UIColor(red: 0.106, green: 0.882, blue: 0.686, alpha: 1), offSet: CGSize(width: 0, height: 4), blur: 8, opacity: 1)
+       
     }
     
     private func configureUI() {
@@ -214,8 +225,37 @@ final class LoginViewController: UIViewController {
         }
     }
     
+    private func configureButtonColors(isEnable:Bool) {
+        guard let subLayers = loginButton.layer.sublayers else {return}
+        for layer in subLayers {
+            if layer is CAGradientLayer {
+                layer.removeFromSuperlayer()
+            }
+        }
+        
+        if isEnable {
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = loginButton.bounds
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+            gradientLayer.colors = [UIColor(red: 0.446, green: 0.873, blue: 0.771, alpha: 1).cgColor, UIColor(red: 0.112, green: 0.87, blue: 0.488, alpha: 1).cgColor]
+            gradientLayer.masksToBounds = true
+            loginButton.layer.insertSublayer(gradientLayer, at: 0)
+            loginButton.makeShadow(color: UIColor(red: 0.106, green: 0.882, blue: 0.686, alpha: 1), offSet: CGSize(width: 0, height: 4), blur: 8, opacity: 1)
+        } else {
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = loginButton.bounds
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+            gradientLayer.colors = [UIColor(red: 0.446, green: 0.873, blue: 0.771, alpha: 0.2).cgColor, UIColor(red: 0.112, green: 0.87, blue: 0.488, alpha: 0.2).cgColor]
+            gradientLayer.masksToBounds = true
+            loginButton.layer.insertSublayer(gradientLayer, at: 0)
+            loginButton.makeShadow(color: UIColor(red: 0.106, green: 0.882, blue: 0.686, alpha: 1), offSet: CGSize(width: 0, height: 4), blur: 8, opacity: 1)        }
+    }
+    
     @objc private func loginClicked(){
         //        interactor?.userTappedLogin(emailTextField.text, password: passwordTextField.text)
+        print("enable")
     }
     
 }

@@ -60,7 +60,7 @@ extension UIView {
         shadowLayer.shadowOpacity = opacity
         shadowLayer.shadowRadius = blur / UIScreen.main.scale
         shadowLayer.shadowOffset = offSet
-        shadowLayer.bounds = self.bounds
+        shadowLayer.frame = self.frame
         shadowLayer.masksToBounds = true
         layer.insertSublayer(shadowLayer, at: 0)
     }
