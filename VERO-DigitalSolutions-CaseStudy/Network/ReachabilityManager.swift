@@ -7,7 +7,7 @@
 
 import Alamofire
 
-final class ReachabilityManager  {
+final class ReachabilityManager {
     
     static let shared : ReachabilityManager = ReachabilityManager()
     private let reachabilityManager: NetworkReachabilityManager = NetworkReachabilityManager(host: "www.google.com")!

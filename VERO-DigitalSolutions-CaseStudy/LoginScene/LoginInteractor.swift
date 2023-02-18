@@ -8,24 +8,40 @@
 
 import Foundation
 
-protocol LoginBusinessLogic {
-    func doSomething(request: LoginRequestModel)
+protocol LoginBusinessLogic : AnyObject {
+    func viewDidLoad()
+    func handleLogin(_ requestModel:LoginRequestModel)
 }
 
 protocol LoginDataStore {
-    //var name: String { get set }
+    var accessToken: String? { get set }
+    var tokenType: String? { get set }
+    var expiresIn: Int? { get set }
 }
 
 final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
+    
     var presenter: LoginPresentationLogic?
-    var worker: LoginWorker?
-    //var name: String = ""
+    var worker: LoginWorker = LoginWorker()
     
-    // MARK: Do something
+    var accessToken: String?
+    var tokenType: String?
+    var expiresIn: Int?
     
-    func doSomething(request: LoginRequestModel) {
-        worker = LoginWorker()
-        worker?.doSomeWork()
-//        presenter?.presentSomething(response: response)
+    func viewDidLoad() {
+        presenter?.viewDidLoad()
+    }
+    
+    func handleLogin(_ requestModel:LoginRequestModel) {
+        worker.getUserLogin(model: requestModel) { [weak self] loginModel, error in
+            if let error = error {
+                self?.presenter?.presentError(errorMessage: error.message)
+            } else {
+                self?.accessToken = loginModel?.oauth?.accessToken
+                self?.tokenType = loginModel?.oauth?.tokenType
+                self?.expiresIn = loginModel?.oauth?.expiresIn
+                self?.presenter?.presentViewModel(response: loginModel)
+            }
+        }
     }
 }

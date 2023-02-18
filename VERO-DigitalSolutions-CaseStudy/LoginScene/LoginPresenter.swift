@@ -9,16 +9,25 @@
 import Foundation
 
 protocol LoginPresentationLogic : AnyObject {
-    func presentSomething(response: LoginResponseModel)
+    func viewDidLoad()
+    func presentViewModel(response: LoginResponseModel?)
+    func presentError(errorMessage: String?)
 }
 
 final class LoginPresenter: LoginPresentationLogic {
     weak var viewController: LoginDisplayLogic?
     
-    // MARK: Do something
+    func viewDidLoad() {
+        viewController?.whenViewDidLoad()
+    }
+
+    func presentViewModel(response: LoginResponseModel?){
+        viewController?.displayLogic(viewModel: LoginViewModel(success: true))
+    }
     
-    func presentSomething(response: LoginResponseModel) {
-//        let viewModel = Login.Something.ViewModel()
-//        viewController?.displaySomething(viewModel: viewModel)
+    func presentError(errorMessage: String?){
+        if let message = errorMessage {
+            viewController?.displayError(message)
+        }
     }
 }

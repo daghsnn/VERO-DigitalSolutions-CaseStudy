@@ -43,7 +43,16 @@ struct UserInfo: Codable {
 }
 
 struct LoginViewModel {
-    
+    let success:Bool
+}
+struct LoginErrorModel: Codable {
+    let error: Error?
+}
+
+// MARK: - Error
+struct Error: Codable {
+    let code: Int?
+    let message: String?
 }
 
 

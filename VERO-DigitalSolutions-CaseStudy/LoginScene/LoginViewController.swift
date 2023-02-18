@@ -11,16 +11,24 @@ import UIKit
 import Combine
 
 protocol LoginDisplayLogic: AnyObject {
-    func displaySomething(viewModel: LoginViewModel)
+    func whenViewDidLoad()
+    func displayLogic(viewModel: LoginViewModel)
+    func displayError(_ message:String)
 }
 
-final class LoginViewController: UIViewController {
+protocol LoginViewInterfaceable {
+    var interactor: LoginBusinessLogic? { get }
+    var router: (LoginRoutingLogic & LoginDataPassing)? { get }
+    var validatedCredentials: AnyPublisher<(String, String)?, Never> { get }
+}
+
+final class LoginViewController: UIViewController, LoginViewInterfaceable {
     // MARK: Varibles
     @Published private var username : String = ""
     @Published private var password : String = ""
     private var cancellable:Set<AnyCancellable> = []
     
-    private var validatedCredentials: AnyPublisher<(String, String)?, Never> {
+    var validatedCredentials: AnyPublisher<(String, String)?, Never> {
         return Publishers.CombineLatest($username, $password)
             .receive(on: RunLoop.main)
             .map { username, password in
@@ -31,8 +39,8 @@ final class LoginViewController: UIViewController {
     
     // MARK: Design Pattern Varibles
 
-    private var interactor: LoginBusinessLogic?
-    private var router: (LoginRoutingLogic & LoginDataPassing)?
+    weak var interactor: LoginBusinessLogic?
+    var router: (LoginRoutingLogic & LoginDataPassing)?
 
     // MARK: UI Elements
     
@@ -42,14 +50,14 @@ final class LoginViewController: UIViewController {
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.textColor = .label
+        label.textColor = UIColor(named: "textColor")
         label.text = "Username"
         return label
     }()
     
     private lazy var usernamelineView : UIView = {
         let view = UIView()
-        view.backgroundColor = .secondaryLabel.withAlphaComponent(0.87)
+        view.backgroundColor = .quaternaryLabel.withAlphaComponent(0.4)
         return view
     }()
     
@@ -58,7 +66,7 @@ final class LoginViewController: UIViewController {
         textField.backgroundColor = .clear
         textField.font = .systemFont(ofSize: 16, weight: .regular)
         textField.textAlignment = .left
-        textField.textColor = .label.withAlphaComponent(0.87)
+        textField.textColor = UIColor(named: "textColor")?.withAlphaComponent(0.87)
         textField.attributedPlaceholder = NSAttributedString(string: "Username",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.quaternaryLabel])
         textField.tintColor = .systemGray
@@ -84,7 +92,7 @@ final class LoginViewController: UIViewController {
         textField.font = .systemFont(ofSize: 16, weight: .regular)
         textField.textAlignment = .left
         textField.isSecureTextEntry = true
-        textField.textColor = .label.withAlphaComponent(0.87)
+        textField.textColor = UIColor(named: "textColor")?.withAlphaComponent(0.87)
         textField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.quaternaryLabel])
         textField.tintColor = .systemGray
@@ -94,7 +102,7 @@ final class LoginViewController: UIViewController {
     
     private lazy var passwordLineView : UIView = {
         let view = UIView()
-        view.backgroundColor = .secondaryLabel.withAlphaComponent(0.87)
+        view.backgroundColor = .quaternaryLabel.withAlphaComponent(0.4)
         return view
     }()
     
@@ -104,7 +112,7 @@ final class LoginViewController: UIViewController {
         button.layer.cornerRadius = 6
         button.isEnabled = false
         button.setTitle("Login", for: .normal)
-        button.setTitleColor(.label.withAlphaComponent(0.8), for: .normal)
+        button.setTitleColor(UIColor(named: "textColor")?.withAlphaComponent(0.8), for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 17, weight: .regular)
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
@@ -142,21 +150,16 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        validatedCredentials.map{ self.configureButtonColors(isEnable: $0 != nil)
-            return $0 != nil}
-        .receive(on: RunLoop.main)
-        .assign(to: \.isEnabled, on: loginButton)
-        .store(in: &cancellable)
-        configureUI()
+        interactor?.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       
+
     }
     
     private func configureUI() {
-        view.backgroundColor = .label.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor(named: "bgColor")
         view.addSubview(usernameLabel)
         view.addSubview(usernamelineView)
         view.addSubview(usernameTextField)
@@ -203,13 +206,10 @@ final class LoginViewController: UIViewController {
             make.height.equalTo(UIView.HEIGHT * 0.055)
         }
     }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-    }
     // TODO: Success te handle
     func configureSucces(_ isSucces:Bool) {
+        usernamelineView.backgroundColor = nil
+        passwordLineView.backgroundColor = nil
         usernamelineView.snp.updateConstraints { make in
             make.height.equalTo(2)
         }
@@ -254,15 +254,34 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func loginClicked(){
-        //        interactor?.userTappedLogin(emailTextField.text, password: passwordTextField.text)
-        print("enable")
+        interactor?.handleLogin(LoginRequestModel(username: usernameTextField.text, password: passwordTextField.text))
     }
     
 }
 
 extension LoginViewController : LoginDisplayLogic {
-    func displaySomething(viewModel: LoginViewModel){
-        
+    func whenViewDidLoad() {
+        configureUI()
+        validatedCredentials.map{ self.configureButtonColors(isEnable: $0 != nil)
+            return $0 != nil}
+        .receive(on: RunLoop.main)
+        .assign(to: \.isEnabled, on: loginButton)
+        .store(in: &cancellable)
+
+    }
+    
+    func displayLogic(viewModel: LoginViewModel) {
+        DispatchQueue.main.async {
+            self.configureSucces(viewModel.success)
+            // TODO: Router ile task
+        }
+    }
+    
+    func displayError(_ message: String) {
+        DispatchQueue.main.async {
+            self.showToast(message: message)
+            self.configureSucces(false)
+        }
     }
 }
 
