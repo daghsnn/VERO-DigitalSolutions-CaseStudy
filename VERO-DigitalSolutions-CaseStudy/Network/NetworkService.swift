@@ -22,7 +22,7 @@ protocol BaseServiceProtocol:AnyObject {
 
 final class NetworkService : BaseServiceProtocol {
 
-    var baseUrl: String = Constans.BASE_URL.rawValue
+    var baseUrl: String = Constants.BASE_URL.rawValue
     var methods: Alamofire.HTTPMethod?
     var headers: Alamofire.HTTPHeaders?
     static let shared : NetworkService = NetworkService()

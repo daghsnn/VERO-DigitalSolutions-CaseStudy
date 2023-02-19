@@ -55,24 +55,3 @@ struct Error: Codable {
     let message: String?
 }
 
-
-// TODO: Bu model ayarlanabilir
-
-struct TasksResponseModel: Codable {
-    let task, title, description, sort: String?
-    let wageType: String?
-    let businessUnitKey: String?
-    let businessUnit: String?
-    let parentTaskID: String?
-    let preplanningBoardQuickSelect: String?
-    let colorCode: String?
-    let workingTime: String?
-    let isAvailableInTimeTrackingKioskMode: Bool?
-
-    enum CodingKeys: String, CodingKey {
-        case task, title, description, sort, wageType
-        case businessUnitKey = "BusinessUnitKey"
-        case businessUnit, parentTaskID, preplanningBoardQuickSelect, colorCode, workingTime, isAvailableInTimeTrackingKioskMode
-    }
-}
-

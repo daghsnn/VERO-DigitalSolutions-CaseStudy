@@ -10,7 +10,29 @@ import Foundation
 extension UserDefaults {
     
     enum UserDefaultKeys: String , CaseIterable {
+        case token
         case mainModel
+        case tokenType
+    }
+    
+    var token: String {
+        get {
+            return string(forKey: UserDefaultKeys.token.rawValue) ?? ""
+        }
+        set {
+            setValue(newValue, forKey: UserDefaultKeys.token.rawValue)
+            synchronize()
+        }
+    }
+    
+    var tokenType: String {
+        get {
+            return string(forKey: UserDefaultKeys.tokenType.rawValue) ?? ""
+        }
+        set {
+            setValue(newValue, forKey: UserDefaultKeys.tokenType.rawValue)
+            synchronize()
+        }
     }
     
     func getCacheModels() -> [LoginResponseModel]? {

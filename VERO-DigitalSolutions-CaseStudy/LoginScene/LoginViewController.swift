@@ -254,6 +254,7 @@ final class LoginViewController: UIViewController, LoginViewInterfaceable {
     }
     
     @objc private func loginClicked(){
+        loginButton.isEnabled = false
         interactor?.handleLogin(LoginRequestModel(username: usernameTextField.text, password: passwordTextField.text))
     }
     
@@ -272,13 +273,17 @@ extension LoginViewController : LoginDisplayLogic {
     
     func displayLogic(viewModel: LoginViewModel) {
         DispatchQueue.main.async {
+            self.loginButton.isEnabled = true
             self.configureSucces(viewModel.success)
-            // TODO: Router ile task
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
+                self.router?.routeToTasks()
+            }
         }
     }
     
     func displayError(_ message: String) {
         DispatchQueue.main.async {
+            self.loginButton.isEnabled = true
             self.showToast(message: message)
             self.configureSucces(false)
         }

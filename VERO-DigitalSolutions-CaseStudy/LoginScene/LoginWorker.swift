@@ -39,7 +39,7 @@ final class LoginWorker {
         
         let service = NetworkService.shared
         service.methods = .post
-        service.headers = ["Authorization": Constans.BASIC_TOKEN.rawValue,
+        service.headers = ["Authorization": Constants.BASIC_TOKEN.rawValue,
                            "Content-Type": "application/json"]
         service.sendRequest(path: .login, params: params) {[weak self] data, error in
             if let error = error{

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LoginRoutingLogic {
-    //func routeToSomewhere()
+    func routeToTasks()
 }
 
 protocol LoginDataPassing {
@@ -23,9 +23,12 @@ final class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing {
     
     // MARK: Navigation
     
-    //func routeToSomewhere() {
-
-    //}
+    func routeToTasks(){
+        let destination = TasksViewController()
+        viewController?.navigationController?.modalTransitionStyle = .crossDissolve
+        viewController?.navigationController?.modalPresentationStyle = .fullScreen
+        viewController?.navigationController?.pushViewController(destination, animated: true)
+    }
     
     // MARK: Passing data
     

@@ -24,8 +24,22 @@ final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
     var presenter: LoginPresentationLogic?
     var worker: LoginWorker = LoginWorker()
     
-    var accessToken: String?
-    var tokenType: String?
+    var accessToken: String?{
+        didSet{
+            if let token = accessToken {
+                UserDefaults.standard.token = token
+            }
+        }
+    }
+    
+    var tokenType: String?{
+        didSet{
+            if let type = tokenType {
+                UserDefaults.standard.tokenType = type
+            }
+        }
+    }
+    // TODO: Expires i sormam lazım
     var expiresIn: Int?
     
     func viewDidLoad() {
