@@ -134,15 +134,14 @@ final class LoginViewController: UIViewController, LoginViewInterfaceable {
     // MARK: Setup
     
     private func setup() {
-        let viewController = self
         let interactor = LoginInteractor()
         let presenter = LoginPresenter()
         let router = LoginRouter()
-        viewController.interactor = interactor
-        viewController.router = router
+        self.interactor = interactor
+        self.router = router
         interactor.presenter = presenter
-        presenter.viewController = viewController
-        router.viewController = viewController
+        presenter.viewController = self
+        router.viewController = self
         router.dataStore = interactor
     }
     
@@ -206,8 +205,8 @@ final class LoginViewController: UIViewController, LoginViewInterfaceable {
             make.height.equalTo(UIView.HEIGHT * 0.055)
         }
     }
-    // TODO: Success te handle
-    func configureSucces(_ isSucces:Bool) {
+
+    private func configureSucces(_ isSucces:Bool) {
         usernamelineView.backgroundColor = nil
         passwordLineView.backgroundColor = nil
         usernamelineView.snp.updateConstraints { make in
@@ -273,7 +272,6 @@ extension LoginViewController : LoginDisplayLogic {
     
     func displayLogic(viewModel: LoginViewModel) {
         DispatchQueue.main.async {
-            self.loginButton.isEnabled = true
             self.configureSucces(viewModel.success)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
                 self.router?.routeToTasks()

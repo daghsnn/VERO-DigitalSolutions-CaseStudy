@@ -29,6 +29,7 @@
 		A9655A7F29A00FFF006897F1 /* Extension+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A7E29A00FFF006897F1 /* Extension+UserDefaults.swift */; };
 		A9655A8229A010E9006897F1 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A8129A010E9006897F1 /* ReachabilityManager.swift */; };
 		A9655A8829A01954006897F1 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A8729A01954006897F1 /* Extension+UIColor.swift */; };
+		A986E1E429A38D38003E738B /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A986E1E329A38D38003E738B /* TasksCell.swift */; };
 		A994F14929A142FD00026470 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14329A142FD00026470 /* TasksPresenter.swift */; };
 		A994F14A29A142FD00026470 /* TasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14429A142FD00026470 /* TasksWorker.swift */; };
 		A994F14B29A142FD00026470 /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14529A142FD00026470 /* TasksRouter.swift */; };
@@ -86,6 +87,7 @@
 		A9655A7E29A00FFF006897F1 /* Extension+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UserDefaults.swift"; sourceTree = "<group>"; };
 		A9655A8129A010E9006897F1 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		A9655A8729A01954006897F1 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		A986E1E329A38D38003E738B /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
 		A994F14329A142FD00026470 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
 		A994F14429A142FD00026470 /* TasksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksWorker.swift; sourceTree = "<group>"; };
 		A994F14529A142FD00026470 /* TasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouter.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				A994F14629A142FD00026470 /* TasksModels.swift */,
 				A994F14729A142FD00026470 /* TasksViewController.swift */,
 				A994F14829A142FD00026470 /* TasksInteractor.swift */,
+				A986E1E329A38D38003E738B /* TasksCell.swift */,
 			);
 			path = TaskScene;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				A9655A7C29A00A49006897F1 /* LoginViewController.swift in Sources */,
 				A994F14A29A142FD00026470 /* TasksWorker.swift in Sources */,
 				A9655A7829A00A49006897F1 /* LoginPresenter.swift in Sources */,
+				A986E1E429A38D38003E738B /* TasksCell.swift in Sources */,
 				A994F15029A17F6100026470 /* Extension+UISearchBar.swift in Sources */,
 				A994F14E29A142FD00026470 /* TasksInteractor.swift in Sources */,
 				A9655A7029A004E0006897F1 /* Extension+UIView.swift in Sources */,

@@ -34,17 +34,48 @@ final class NetworkService : BaseServiceProtocol {
             AF.request(self.baseUrl + path.rawValue, method:self.methods ?? .get, parameters:params, encoding:JSONEncoding.default, headers:self.headers).responseData { response in
                 do {
                     if response.response?.statusCode == 200 {
+                        // MARK: Caching with FileManager
+
+//                        if path == .tasks {
+//                            let key = "cacheKey"
+//                            let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+//                            let fileUrl = cachesDirectory.appendingPathComponent(key)
+//                            do {
+//                                let encodedData = try JSONEncoder().encode(response.data)
+//                                try encodedData.write(to: fileUrl)
+//                            } catch {
+//                                print("Error caching data: \(error.localizedDescription)")
+//                            }
+//                        }
+                        
+
                         completion(response.data, nil)
                     } else {
                         let errorModel = try JSONDecoder().decode(LoginErrorModel.self, from: response.data ?? Data())
                         completion(nil,Error(code: errorModel.error?.code, message: errorModel.error?.message))
                     }
                 } catch {
-                    completion(nil,Error(code: nil, message: "A problem happened"))
+                    completion(nil,Error(code: nil, message: error.localizedDescription))
                 }
             }
         } else {
-            // cache
+            if path == .tasks {
+                // MARK: Caching with UserDefaults
+                let model = UserDefaults.standard.getCacheModels()
+                do {
+                    let data = try JSONEncoder().encode(model)
+                    completion(data,nil)
+                } catch {
+                    completion(nil,Error(code: nil, message: error.localizedDescription))
+                }
+                // MARK: Get Cached data with FileManager
+//                let key = "cacheKey"
+//                let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+//                let fileUrl = cachesDirectory.appendingPathComponent(key)
+//                if let data = try? Data(contentsOf: fileUrl) {
+//                    completion(data,nil)
+//                }
+            }
         }
         
     }

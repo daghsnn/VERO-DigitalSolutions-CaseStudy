@@ -9,16 +9,33 @@
 import Foundation
 
 protocol TasksPresentationLogic : AnyObject {
-    func presentSomething(response: Tasks.Something.Response)
+    func viewDidLoad()
+    func viewWillAppear()
+    func presentViewModel(response: [TasksResponseModel]?)
+    func presentError(errorMessage: String?)
+
 }
 
 final class TasksPresenter: TasksPresentationLogic {
     weak var viewController: TasksDisplayLogic?
     
-    // MARK: Do something
+    func viewDidLoad() {
+        viewController?.whenViewDidLoad()
+    }
     
-    func presentSomething(response: Tasks.Something.Response) {
-        let viewModel = Tasks.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func viewWillAppear() {
+        viewController?.whenViewWillAppear()
+    }
+
+    func presentViewModel(response: [TasksResponseModel]?){
+        if let response {
+            self.viewController?.displayLogic(viewModel: TasksViewModel(responseModel: response))
+        }
+    }
+    
+    func presentError(errorMessage: String?){
+        if let errorMessage {
+            viewController?.displayError(errorMessage)
+        }
     }
 }

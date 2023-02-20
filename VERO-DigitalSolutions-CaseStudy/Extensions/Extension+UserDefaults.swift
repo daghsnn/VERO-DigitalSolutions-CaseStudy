@@ -34,11 +34,12 @@ extension UserDefaults {
             synchronize()
         }
     }
-    
-    func getCacheModels() -> [LoginResponseModel]? {
+    /// Note: For making cache there got a lot of approach I select userdefaults but
+    /// I could do with data Caching NSCache, FileManager for .cacheDirectory or CoreData
+    func getCacheModels() -> [TasksResponseModel]? {
         if let data = data(forKey: UserDefaultKeys.mainModel.rawValue) {
             do {
-                let cachedModel = try JSONDecoder().decode([LoginResponseModel].self, from: data)
+                let cachedModel = try JSONDecoder().decode([TasksResponseModel].self, from: data)
                 return cachedModel
             } catch {
                 
@@ -48,7 +49,7 @@ extension UserDefaults {
         return nil
     }
     
-    func saveModeltoCache(_ cacheModel: [LoginResponseModel]) {
+    func saveModeltoCache(_ cacheModel: [TasksResponseModel]) {
         do {
             let data = try JSONEncoder().encode(cacheModel)
             set(data, forKey: UserDefaultKeys.mainModel.rawValue)

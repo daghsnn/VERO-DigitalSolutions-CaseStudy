@@ -17,12 +17,13 @@ enum Tasks {
         struct Response {
             
         }
-        struct ViewModel {
-            
-        }
+        
     }
 }
-// TODO: Bu model ayarlanabilir
+
+struct TasksViewModel {
+    let responseModel : [TasksResponseModel]
+}
 
 struct TasksResponseModel: Codable {
     let task, title, description, sort: String?
