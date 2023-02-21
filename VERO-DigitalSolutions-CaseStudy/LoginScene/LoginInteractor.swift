@@ -16,7 +16,6 @@ protocol LoginBusinessLogic : AnyObject {
 protocol LoginDataStore {
     var accessToken: String? { get set }
     var tokenType: String? { get set }
-    var expiresIn: Int? { get set }
 }
 
 final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
@@ -39,8 +38,6 @@ final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
             }
         }
     }
-    // TODO: Expires i sormam lazım
-    var expiresIn: Int?
     
     func viewDidLoad() {
         presenter?.viewDidLoad()

@@ -11,6 +11,7 @@ import Foundation
 struct LoginRequestModel : Codable {
     let username, password : String?
 }
+
 struct LoginResponseModel : Codable {
     let oauth: Oauth?
     let userInfo: UserInfo?

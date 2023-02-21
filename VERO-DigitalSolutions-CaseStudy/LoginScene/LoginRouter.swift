@@ -20,19 +20,10 @@ final class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing {
     weak var viewController: LoginViewController?
     var dataStore: LoginDataStore?
     
-    
-    // MARK: Navigation
-    
     func routeToTasks(){
         let destination = TasksViewController()
         viewController?.navigationController?.modalTransitionStyle = .crossDissolve
         viewController?.navigationController?.modalPresentationStyle = .fullScreen
         viewController?.navigationController?.pushViewController(destination, animated: true)
     }
-    
-    // MARK: Passing data
-    
-    //func passDataToSomewhere(source: LoginDataStore, destination: inout SomewhereDataStore) {
-    //  destination.name = source.name
-    //}
 }

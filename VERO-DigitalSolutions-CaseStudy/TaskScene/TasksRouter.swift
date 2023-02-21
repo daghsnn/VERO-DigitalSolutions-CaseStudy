@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TasksRoutingLogic {
-    //func routeToSomewhere()
+    func routeToCameraVC()
 }
 
 protocol TasksDataPassing {
@@ -20,16 +20,11 @@ final class TasksRouter: NSObject, TasksRoutingLogic, TasksDataPassing {
     weak var viewController: TasksViewController?
     var dataStore: TasksDataStore?
     
-    
-    // MARK: Navigation
-    
-    //func routeToSomewhere() {
-
-    //}
-    
-    // MARK: Passing data
-    
-    //func passDataToSomewhere(source: TasksDataStore, destination: inout SomewhereDataStore) {
-    //  destination.name = source.name
-    //}
+    func routeToCameraVC() {
+        let destination = CameraViewController()
+        destination.delegate = viewController
+        viewController?.modalTransitionStyle = .crossDissolve
+        viewController?.modalPresentationStyle = .overFullScreen
+        viewController?.present(destination, animated: true)
+    }
 }

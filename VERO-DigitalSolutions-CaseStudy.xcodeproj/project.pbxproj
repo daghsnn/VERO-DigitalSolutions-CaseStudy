@@ -37,6 +37,7 @@
 		A994F14D29A142FD00026470 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14729A142FD00026470 /* TasksViewController.swift */; };
 		A994F14E29A142FD00026470 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14829A142FD00026470 /* TasksInteractor.swift */; };
 		A994F15029A17F6100026470 /* Extension+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14F29A17F6100026470 /* Extension+UISearchBar.swift */; };
+		A9E192E529A500A2006D31CE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E192E429A500A2006D31CE /* CameraViewController.swift */; };
 		CD77DA87950FD1DB55E30663 /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD994402A5561EE5AD938B8B /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		A994F14729A142FD00026470 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		A994F14829A142FD00026470 /* TasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
 		A994F14F29A17F6100026470 /* Extension+UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UISearchBar.swift"; sourceTree = "<group>"; };
+		A9E192E429A500A2006D31CE /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		AA9E345D1F8CBF703A1F8BB1 /* Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy/Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		ACC9E2A4ECFF3B75A4154D00 /* Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudyTests/Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD994402A5561EE5AD938B8B /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 		A9655A2E29A00282006897F1 /* VERO-DigitalSolutions-CaseStudy */ = {
 			isa = PBXGroup;
 			children = (
+				A9E192E629A51316006D31CE /* CameraScene */,
 				A994F14229A142EB00026470 /* TaskScene */,
 				A9655A8029A010D3006897F1 /* Network */,
 				A9655A7129A00A0E006897F1 /* LoginScene */,
@@ -254,6 +257,14 @@
 				A986E1E329A38D38003E738B /* TasksCell.swift */,
 			);
 			path = TaskScene;
+			sourceTree = "<group>";
+		};
+		A9E192E629A51316006D31CE /* CameraScene */ = {
+			isa = PBXGroup;
+			children = (
+				A9E192E429A500A2006D31CE /* CameraViewController.swift */,
+			);
+			path = CameraScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +510,7 @@
 				A9655A7829A00A49006897F1 /* LoginPresenter.swift in Sources */,
 				A986E1E429A38D38003E738B /* TasksCell.swift in Sources */,
 				A994F15029A17F6100026470 /* Extension+UISearchBar.swift in Sources */,
+				A9E192E529A500A2006D31CE /* CameraViewController.swift in Sources */,
 				A994F14E29A142FD00026470 /* TasksInteractor.swift in Sources */,
 				A9655A7029A004E0006897F1 /* Extension+UIView.swift in Sources */,
 				A9655A8229A010E9006897F1 /* ReachabilityManager.swift in Sources */,
@@ -693,6 +705,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -724,6 +737,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

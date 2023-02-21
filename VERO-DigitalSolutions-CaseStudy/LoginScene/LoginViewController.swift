@@ -37,8 +37,6 @@ final class LoginViewController: UIViewController, LoginViewInterfaceable {
             .eraseToAnyPublisher()
     }
     
-    // MARK: Design Pattern Varibles
-
     weak var interactor: LoginBusinessLogic?
     var router: (LoginRoutingLogic & LoginDataPassing)?
 

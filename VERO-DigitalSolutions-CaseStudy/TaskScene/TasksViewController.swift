@@ -27,6 +27,7 @@ final class TasksViewController: UIViewController {
     
     private var searchBarOldText : String = ""
     private var viewModel : TasksViewModel?
+    
     // MARK: UI Elements
     private lazy var searchBar : UISearchBar = {
         let searchBar = UISearchBar()
@@ -126,7 +127,7 @@ final class TasksViewController: UIViewController {
     }
     
     @objc private func qrButtonTapped(){
-        
+        router?.routeToCameraVC()
     }
     
     @objc private func refreshCollectionView() {
@@ -139,6 +140,7 @@ final class TasksViewController: UIViewController {
         }
     }
 }
+// MARK: TasksDisplayLogic
 
 extension TasksViewController : TasksDisplayLogic {
 
@@ -170,6 +172,8 @@ extension TasksViewController : TasksDisplayLogic {
         }
     }
 }
+// MARK: CollectionView
+
 extension TasksViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let viewModel else {return 0}
@@ -191,7 +195,7 @@ extension TasksViewController : UICollectionViewDataSource, UICollectionViewDele
     }
 }
 
-
+// MARK: UISearchBarDelegate
 extension TasksViewController : UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -203,7 +207,6 @@ extension TasksViewController : UISearchBarDelegate {
                 self.interactor?.configureSearching(searchText.lowercased(), false)
             }
         } else if searchText.count == 0 {
-            searchBar.showsCancelButton = false
             self.interactor?.configureCancelSearch(false)
         }
     }
@@ -214,15 +217,24 @@ extension TasksViewController : UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
-        searchBar.showsCancelButton = false
         self.interactor?.configureCancelSearch(false)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = true
         if searchBar.text?.count ?? 1 > 0 {
             self.interactor?.configureSearching((searchBar.text?.lowercased())!, false)
         }
     }
 
+}
+
+// MARK: CameraHandleDelegate
+extension TasksViewController : CameraHandleDelegate {
+    func prepareQRScanningResult(_ text: String) {
+        searchBarOldText = text
+        searchBar.text = text
+        self.interactor?.configureSearching(text.lowercased(), false)
+    }
+    
+    
 }

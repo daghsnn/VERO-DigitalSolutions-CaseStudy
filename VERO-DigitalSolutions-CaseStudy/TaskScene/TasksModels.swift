@@ -8,19 +8,6 @@
 
 import Foundation
 
-enum Tasks {
-    
-    enum Something {
-        struct Request {
-            
-        }
-        struct Response {
-            
-        }
-        
-    }
-}
-
 struct TasksViewModel {
     let responseModel : [TasksResponseModel]
 }
