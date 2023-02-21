@@ -10,25 +10,6 @@ import Foundation
 
 final class LoginWorker {
     
-    func doSomeWork() {
-        // Data önbelleğe eklenir
-        let data = Data()
-        let key = "myCacheKey"
-        let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-        let fileUrl = cachesDirectory.appendingPathComponent(key)
-        
-        do {
-            let encodedData = try JSONEncoder().encode(data)
-            try encodedData.write(to: fileUrl)
-        } catch {
-            print("Error caching data: \(error.localizedDescription)")
-        }
-        
-        if let data = try? Data(contentsOf: fileUrl) {
-            // Diskten alınan data kullanılır
-        }
-    }
-    
     func getUserLogin(model:LoginRequestModel, completion: @escaping (LoginResponseModel?, Error?) ->()) {
         let mirror = Mirror(reflecting: model)
         var params = [String: Any]()

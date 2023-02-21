@@ -35,7 +35,6 @@ final class NetworkService : BaseServiceProtocol {
                 do {
                     if response.response?.statusCode == 200 {
                         // MARK: Caching with FileManager
-
 //                        if path == .tasks {
 //                            let key = "cacheKey"
 //                            let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
@@ -47,8 +46,6 @@ final class NetworkService : BaseServiceProtocol {
 //                                print("Error caching data: \(error.localizedDescription)")
 //                            }
 //                        }
-                        
-
                         completion(response.data, nil)
                     } else {
                         let errorModel = try JSONDecoder().decode(LoginErrorModel.self, from: response.data ?? Data())

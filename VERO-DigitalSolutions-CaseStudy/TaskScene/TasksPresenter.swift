@@ -11,7 +11,7 @@ import Foundation
 protocol TasksPresentationLogic : AnyObject {
     func viewDidLoad()
     func viewWillAppear()
-    func presentViewModel(response: [TasksResponseModel]?)
+    func presentViewModel(response: [TasksResponseModel]?, isSearching:Bool)
     func presentError(errorMessage: String?)
 
 }
@@ -27,9 +27,11 @@ final class TasksPresenter: TasksPresentationLogic {
         viewController?.whenViewWillAppear()
     }
 
-    func presentViewModel(response: [TasksResponseModel]?){
-        if let response {
-            self.viewController?.displayLogic(viewModel: TasksViewModel(responseModel: response))
+    func presentViewModel(response: [TasksResponseModel]?, isSearching:Bool = false){
+        if let response = response, response.count > 0 {
+            self.viewController?.displayLogic(viewModel: TasksViewModel(responseModel: response), isEditing: isSearching)
+        } else {
+            presentError(errorMessage: "Tasks not found")
         }
     }
     

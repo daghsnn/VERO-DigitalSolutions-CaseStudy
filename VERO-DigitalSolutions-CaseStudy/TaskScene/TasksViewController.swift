@@ -12,7 +12,7 @@ import UIKit
 protocol TasksDisplayLogic: AnyObject {
     func whenViewDidLoad()
     func whenViewWillAppear()
-    func displayLogic(viewModel: TasksViewModel)
+    func displayLogic(viewModel: TasksViewModel, isEditing: Bool)
     func displayError(_ message: String)
 }
 
@@ -28,10 +28,9 @@ final class TasksViewController: UIViewController {
     private var searchBarOldText : String = ""
     private var viewModel : TasksViewModel?
     // MARK: UI Elements
-    
     private lazy var searchBar : UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.searchBarStyle = .minimal
+        searchBar.searchBarStyle = .prominent
         searchBar.setMagnifyingGlassColorTo(color: UIColor(named: "cellTextColor") ?? .secondaryLabel)
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
             string: "Search anything..",
@@ -41,12 +40,12 @@ final class TasksViewController: UIViewController {
         searchBar.isTranslucent = true
         searchBar.searchTextField.textColor = UIColor(named: "cellTextColor")
         searchBar.searchTextField.backgroundColor = UIColor(named: "editBgColor")?.withAlphaComponent(0.25)
-        searchBar.searchTextField.font = .systemFont(ofSize: 12, weight: .regular)
+        searchBar.searchTextField.font = .systemFont(ofSize: 14, weight: .regular)
         searchBar.image(for: .search, state: .normal)
         searchBar.delegate = self
         return searchBar
     }()
-    
+
     private lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -133,10 +132,16 @@ extension TasksViewController : TasksDisplayLogic {
         configureNavBar()
     }
     
-    func displayLogic(viewModel: TasksViewModel) {
+    func displayLogic(viewModel: TasksViewModel, isEditing: Bool = false) {
         self.viewModel = viewModel
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
+        if !isEditing {
+            DispatchQueue.main.async {
+                let index = self.collectionView.indexPathsForVisibleItems.last
+                if index?.item ?? 0 > 4 {
+                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+                }
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -169,17 +174,18 @@ extension TasksViewController : UICollectionViewDataSource, UICollectionViewDele
 
 
 extension TasksViewController : UISearchBarDelegate {
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.count > 0 {
+        if searchText.count > 2 {
             if searchBarOldText.count > searchText.count {
-//                self.configureSearching(searchText.lowercased(), isPressBackSpace: true)
+                self.interactor?.configureSearching(searchText.lowercased(), true)
             } else {
                 searchBarOldText = searchText
-//                self.configureSearching(searchText.lowercased())
+                self.interactor?.configureSearching(searchText.lowercased(), false)
             }
         } else if searchText.count == 0 {
             searchBar.showsCancelButton = false
-//            configureCancelSearch()
+            self.interactor?.configureCancelSearch(false)
         }
     }
     
@@ -190,14 +196,14 @@ extension TasksViewController : UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.showsCancelButton = false
-        searchBarOldText = ""
-//        configureCancelSearch()
+        self.interactor?.configureCancelSearch(false)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
+        searchBar.showsCancelButton = true
         if searchBar.text?.count ?? 1 > 0 {
-//            self.configureSearching((searchBar.text?.lowercased())!)
+            self.interactor?.configureSearching((searchBar.text?.lowercased())!, false)
         }
     }
+
 }
