@@ -60,7 +60,12 @@ final class TasksViewController: UIViewController {
         return cv
     }()
 
-    
+    private lazy var refreshControl : UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshCollectionView), for: .primaryActionTriggered)
+        return refreshControl
+    }()
+
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -112,6 +117,9 @@ final class TasksViewController: UIViewController {
     private func configureUI(){
         view.backgroundColor = UIColor(named: "bgColor")
         view.addSubview(collectionView)
+        
+        collectionView.addSubview(refreshControl)
+        
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -119,6 +127,16 @@ final class TasksViewController: UIViewController {
     
     @objc private func qrButtonTapped(){
         
+    }
+    
+    @objc private func refreshCollectionView() {
+        searchBar.text = ""
+        searchBarOldText = ""
+        refreshControl.endRefreshing()
+        searchBar.isUserInteractionEnabled = false
+        Task{
+            await self.interactor?.getModels()
+        }
     }
 }
 
@@ -133,6 +151,7 @@ extension TasksViewController : TasksDisplayLogic {
     }
     
     func displayLogic(viewModel: TasksViewModel, isEditing: Bool = false) {
+        searchBar.isUserInteractionEnabled = true
         self.viewModel = viewModel
         if !isEditing {
             DispatchQueue.main.async {

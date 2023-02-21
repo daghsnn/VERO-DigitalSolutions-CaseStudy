@@ -65,13 +65,34 @@ final class TasksInteractor: TasksBusinessLogic, TasksDataStore {
     }
     
     private func getSearchResults(_ keyword : String) -> [TasksResponseModel]? {
-        let searchResults = responseModel?.filter{$0.task?.contains(keyword) ?? false ||
-                                                $0.title?.contains(keyword) ?? false ||
-                                                $0.description?.contains(keyword) ?? false ||
-                                                $0.wageType?.contains(keyword) ?? false ||
-                                                $0.parentTaskID?.contains(keyword) ?? false ||
-                                                $0.businessUnit?.contains(keyword) ?? false
+        var totalStringDict : [Int:String] = [:]
+        var model : [TasksResponseModel]? = []
+        for (index, model) in responseModel!.enumerated() {
+            let mirror = Mirror(reflecting: model)
+            var textValue = String()
+            for case let (_, value as String) in mirror.children {
+                textValue += value.lowercased()
+            }
+            totalStringDict[index] = textValue
         }
-        return searchResults
+        
+        let dict = totalStringDict.sorted { $0.key < $1.key }
+
+        for (index, key) in dict {
+            if key.contains(keyword), let indexedModel = responseModel?[index] {
+                model?.append(indexedModel)
+            }
+        }
+
+        return model
+        // MARK: For task want to all parameters want to be searching I do with Mirror and Dictonary approach
+//        let searchResults = responseModel?.filter{$0.task?.contains(keyword) ?? false ||
+//                                                $0.title?.contains(keyword) ?? false ||
+//                                                $0.description?.contains(keyword) ?? false ||
+//                                                $0.wageType?.contains(keyword) ?? false ||
+//                                                $0.parentTaskID?.contains(keyword) ?? false ||
+//                                                $0.businessUnit?.contains(keyword) ?? false
+//        }
+//        return searchResults
     }
 }
