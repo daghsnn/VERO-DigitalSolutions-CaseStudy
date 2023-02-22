@@ -126,7 +126,7 @@ final class TasksViewController: UIViewController {
         }
     }
     
-    @objc private func qrButtonTapped(){
+    @objc func qrButtonTapped(){
         router?.routeToCameraVC()
     }
     

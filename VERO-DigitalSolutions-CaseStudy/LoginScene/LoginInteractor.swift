@@ -50,7 +50,6 @@ final class LoginInteractor: LoginBusinessLogic, LoginDataStore {
             } else {
                 self?.accessToken = loginModel?.oauth?.accessToken
                 self?.tokenType = loginModel?.oauth?.tokenType
-                self?.expiresIn = loginModel?.oauth?.expiresIn
                 self?.presenter?.presentViewModel(response: loginModel)
             }
         }

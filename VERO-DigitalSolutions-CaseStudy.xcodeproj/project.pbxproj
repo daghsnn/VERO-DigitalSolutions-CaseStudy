@@ -9,9 +9,17 @@
 /* Begin PBXBuildFile section */
 		74206C11A606AE5B599E2EC2 /* Pods_VERO_DigitalSolutions_CaseStudyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7117AE06D780F97FAEBD5E /* Pods_VERO_DigitalSolutions_CaseStudyTests.framework */; };
 		8DA2F376193754F32AC706E3 /* Pods_VERO_DigitalSolutions_CaseStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0A49FAAF31D54F7B60577 /* Pods_VERO_DigitalSolutions_CaseStudy.framework */; };
+		A91790D829A5495D0072E015 /* LoginSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91790D729A5495D0072E015 /* LoginSceneTests.swift */; };
+		A91790DA29A54A900072E015 /* LoginSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91790D929A54A900072E015 /* LoginSpy.swift */; };
+		A91790DC29A56BF80072E015 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91790DB29A56BF80072E015 /* LoginPresenterTests.swift */; };
+		A91790DE29A56C180072E015 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91790DD29A56C180072E015 /* LoginInteractorTests.swift */; };
 		A9396FEE29A0E597001B0C17 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9396FED29A0E597001B0C17 /* NetworkService.swift */; };
 		A9396FF029A10DD3001B0C17 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9396FEF29A10DD3001B0C17 /* Constants.swift */; };
 		A9396FF229A11897001B0C17 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9396FF129A11897001B0C17 /* Extension+UIViewController.swift */; };
+		A950951F29A67634006F9B19 /* TaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950951E29A67634006F9B19 /* TaskSpy.swift */; };
+		A950952129A676EC006F9B19 /* TasksSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950952029A676EC006F9B19 /* TasksSceneTest.swift */; };
+		A950952329A6800C006F9B19 /* TasksInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950952229A6800C006F9B19 /* TasksInteractorTests.swift */; };
+		A950952529A681F7006F9B19 /* TasksPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950952429A681F7006F9B19 /* TasksPresenterTests.swift */; };
 		A9655A3029A00282006897F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A2F29A00282006897F1 /* AppDelegate.swift */; };
 		A9655A3229A00282006897F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9655A3129A00282006897F1 /* SceneDelegate.swift */; };
 		A9655A3929A00285006897F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9655A3829A00285006897F1 /* Assets.xcassets */; };
@@ -64,9 +72,17 @@
 		736DF959BB2C65F8BF80211E /* Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.release.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests/Pods-VERO-DigitalSolutions-CaseStudy-VERO-DigitalSolutions-CaseStudyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9B7117AE06D780F97FAEBD5E /* Pods_VERO_DigitalSolutions_CaseStudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VERO_DigitalSolutions_CaseStudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B0A49FAAF31D54F7B60577 /* Pods_VERO_DigitalSolutions_CaseStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VERO_DigitalSolutions_CaseStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A91790D729A5495D0072E015 /* LoginSceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneTests.swift; sourceTree = "<group>"; };
+		A91790D929A54A900072E015 /* LoginSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSpy.swift; sourceTree = "<group>"; };
+		A91790DB29A56BF80072E015 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		A91790DD29A56C180072E015 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
 		A9396FED29A0E597001B0C17 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A9396FEF29A10DD3001B0C17 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A9396FF129A11897001B0C17 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		A950951E29A67634006F9B19 /* TaskSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSpy.swift; sourceTree = "<group>"; };
+		A950952029A676EC006F9B19 /* TasksSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSceneTest.swift; sourceTree = "<group>"; };
+		A950952229A6800C006F9B19 /* TasksInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInteractorTests.swift; sourceTree = "<group>"; };
+		A950952429A681F7006F9B19 /* TasksPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenterTests.swift; sourceTree = "<group>"; };
 		A9655A2C29A00282006897F1 /* VERO-DigitalSolutions-CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VERO-DigitalSolutions-CaseStudy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9655A2F29A00282006897F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9655A3129A00282006897F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +170,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A91790D429A549250072E015 /* LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				A91790D729A5495D0072E015 /* LoginSceneTests.swift */,
+				A91790D929A54A900072E015 /* LoginSpy.swift */,
+				A91790DB29A56BF80072E015 /* LoginPresenterTests.swift */,
+				A91790DD29A56C180072E015 /* LoginInteractorTests.swift */,
+			);
+			path = LoginTests;
+			sourceTree = "<group>";
+		};
+		A950951D29A67627006F9B19 /* TasksTests */ = {
+			isa = PBXGroup;
+			children = (
+				A950951E29A67634006F9B19 /* TaskSpy.swift */,
+				A950952029A676EC006F9B19 /* TasksSceneTest.swift */,
+				A950952229A6800C006F9B19 /* TasksInteractorTests.swift */,
+				A950952429A681F7006F9B19 /* TasksPresenterTests.swift */,
+			);
+			path = TasksTests;
+			sourceTree = "<group>";
+		};
 		A9655A2329A00282006897F1 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +235,8 @@
 		A9655A4529A00285006897F1 /* VERO-DigitalSolutions-CaseStudyTests */ = {
 			isa = PBXGroup;
 			children = (
+				A950951D29A67627006F9B19 /* TasksTests */,
+				A91790D429A549250072E015 /* LoginTests */,
 				A9655A4629A00285006897F1 /* VERO_DigitalSolutions_CaseStudyTests.swift */,
 			);
 			path = "VERO-DigitalSolutions-CaseStudyTests";
@@ -536,7 +576,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A950952529A681F7006F9B19 /* TasksPresenterTests.swift in Sources */,
+				A950952129A676EC006F9B19 /* TasksSceneTest.swift in Sources */,
+				A950952329A6800C006F9B19 /* TasksInteractorTests.swift in Sources */,
+				A91790DC29A56BF80072E015 /* LoginPresenterTests.swift in Sources */,
+				A950951F29A67634006F9B19 /* TaskSpy.swift in Sources */,
+				A91790DA29A54A900072E015 /* LoginSpy.swift in Sources */,
 				A9655A4729A00285006897F1 /* VERO_DigitalSolutions_CaseStudyTests.swift in Sources */,
+				A91790DE29A56C180072E015 /* LoginInteractorTests.swift in Sources */,
+				A91790D829A5495D0072E015 /* LoginSceneTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

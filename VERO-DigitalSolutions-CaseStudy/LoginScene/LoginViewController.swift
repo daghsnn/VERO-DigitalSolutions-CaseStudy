@@ -19,7 +19,6 @@ protocol LoginDisplayLogic: AnyObject {
 protocol LoginViewInterfaceable {
     var interactor: LoginBusinessLogic? { get }
     var router: (LoginRoutingLogic & LoginDataPassing)? { get }
-    var validatedCredentials: AnyPublisher<(String, String)?, Never> { get }
 }
 
 final class LoginViewController: UIViewController, LoginViewInterfaceable {
@@ -28,7 +27,7 @@ final class LoginViewController: UIViewController, LoginViewInterfaceable {
     @Published private var password : String = ""
     private var cancellable:Set<AnyCancellable> = []
     
-    var validatedCredentials: AnyPublisher<(String, String)?, Never> {
+    private var validatedCredentials: AnyPublisher<(String, String)?, Never> {
         return Publishers.CombineLatest($username, $password)
             .receive(on: RunLoop.main)
             .map { username, password in
@@ -250,7 +249,7 @@ final class LoginViewController: UIViewController, LoginViewInterfaceable {
             loginButton.makeShadow(color: UIColor(red: 0.106, green: 0.882, blue: 0.686, alpha: 1), offSet: CGSize(width: 0, height: 4), blur: 8, opacity: 1)        }
     }
     
-    @objc private func loginClicked(){
+    @objc func loginClicked(){
         loginButton.isEnabled = false
         interactor?.handleLogin(LoginRequestModel(username: usernameTextField.text, password: passwordTextField.text))
     }
