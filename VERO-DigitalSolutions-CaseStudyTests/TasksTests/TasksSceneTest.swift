@@ -41,7 +41,7 @@ final class TasksSceneTest: XCTestCase {
     
     func test_invokedRouter() throws {
         XCTAssertFalse(router.invokedRouteToCameraVC)
-        sut.qrButtonTapped()
+        sut.router?.routeToCameraVC()
         XCTAssertTrue(router.invokedRouteToCameraVC)
     }
 

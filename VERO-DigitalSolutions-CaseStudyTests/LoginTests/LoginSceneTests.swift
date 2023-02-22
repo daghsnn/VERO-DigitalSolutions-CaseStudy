@@ -43,6 +43,13 @@ final class LoginSceneTests: XCTestCase {
         XCTAssertTrue(interactor.invokedHandleLogin)
     }
     
+    func test_displayLogic_invokeLoginFalse() throws {
+        XCTAssertFalse(interactor.invokedHandleLogin)
+        sut.displayLogic(viewModel: LoginViewModel(success: false))
+        sut.loginClicked()
+        XCTAssertTrue(interactor.invokedHandleLogin)
+    }
+    
     func test_displayLogic_isRequestModelValid() throws {
         // Given
         XCTAssertNil(interactor.invokedHandleLoginParameters)
@@ -57,7 +64,7 @@ final class LoginSceneTests: XCTestCase {
     
     func test_displayLogic_invokedRouter() throws {
         XCTAssertFalse(router.invokedRouteToTasks)
-        router.routeToTasks()
+        sut.router?.routeToTasks()
         XCTAssertTrue(router.invokedRouteToTasks)
     }
 
