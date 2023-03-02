@@ -14,7 +14,6 @@
 		A91790DC29A56BF80072E015 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91790DB29A56BF80072E015 /* LoginPresenterTests.swift */; };
 		A91790DE29A56C180072E015 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91790DD29A56C180072E015 /* LoginInteractorTests.swift */; };
 		A9396FEE29A0E597001B0C17 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9396FED29A0E597001B0C17 /* NetworkService.swift */; };
-		A9396FF029A10DD3001B0C17 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9396FEF29A10DD3001B0C17 /* Constants.swift */; };
 		A9396FF229A11897001B0C17 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9396FF129A11897001B0C17 /* Extension+UIViewController.swift */; };
 		A950951F29A67634006F9B19 /* TaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950951E29A67634006F9B19 /* TaskSpy.swift */; };
 		A950952129A676EC006F9B19 /* TasksSceneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950952029A676EC006F9B19 /* TasksSceneTest.swift */; };
@@ -45,6 +44,7 @@
 		A994F14D29A142FD00026470 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14729A142FD00026470 /* TasksViewController.swift */; };
 		A994F14E29A142FD00026470 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14829A142FD00026470 /* TasksInteractor.swift */; };
 		A994F15029A17F6100026470 /* Extension+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994F14F29A17F6100026470 /* Extension+UISearchBar.swift */; };
+		A9CD153529B1077000932407 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD153429B1077000932407 /* AppConstants.swift */; };
 		A9E192E529A500A2006D31CE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E192E429A500A2006D31CE /* CameraViewController.swift */; };
 		CD77DA87950FD1DB55E30663 /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD994402A5561EE5AD938B8B /* Pods_VERO_DigitalSolutions_CaseStudy_VERO_DigitalSolutions_CaseStudyUITests.framework */; };
 /* End PBXBuildFile section */
@@ -77,7 +77,6 @@
 		A91790DB29A56BF80072E015 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		A91790DD29A56C180072E015 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
 		A9396FED29A0E597001B0C17 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		A9396FEF29A10DD3001B0C17 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A9396FF129A11897001B0C17 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		A950951E29A67634006F9B19 /* TaskSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSpy.swift; sourceTree = "<group>"; };
 		A950952029A676EC006F9B19 /* TasksSceneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksSceneTest.swift; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		A994F14729A142FD00026470 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		A994F14829A142FD00026470 /* TasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
 		A994F14F29A17F6100026470 /* Extension+UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UISearchBar.swift"; sourceTree = "<group>"; };
+		A9CD153429B1077000932407 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		A9E192E429A500A2006D31CE /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		AA9E345D1F8CBF703A1F8BB1 /* Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudy/Pods-VERO-DigitalSolutions-CaseStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		ACC9E2A4ECFF3B75A4154D00 /* Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig"; path = "Target Support Files/Pods-VERO-DigitalSolutions-CaseStudyTests/Pods-VERO-DigitalSolutions-CaseStudyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,10 +224,10 @@
 				A9655A6E29A004BA006897F1 /* Extensions */,
 				A9655A2F29A00282006897F1 /* AppDelegate.swift */,
 				A9655A3129A00282006897F1 /* SceneDelegate.swift */,
+				A9CD153429B1077000932407 /* AppConstants.swift */,
 				A9655A3829A00285006897F1 /* Assets.xcassets */,
 				A9655A3A29A00285006897F1 /* LaunchScreen.storyboard */,
 				A9655A3D29A00285006897F1 /* Info.plist */,
-				A9396FEF29A10DD3001B0C17 /* Constants.swift */,
 			);
 			path = "VERO-DigitalSolutions-CaseStudy";
 			sourceTree = "<group>";
@@ -564,7 +564,7 @@
 				A9655A7A29A00A49006897F1 /* LoginRouter.swift in Sources */,
 				A9655A3229A00282006897F1 /* SceneDelegate.swift in Sources */,
 				A994F14B29A142FD00026470 /* TasksRouter.swift in Sources */,
-				A9396FF029A10DD3001B0C17 /* Constants.swift in Sources */,
+				A9CD153529B1077000932407 /* AppConstants.swift in Sources */,
 				A994F14929A142FD00026470 /* TasksPresenter.swift in Sources */,
 				A994F14D29A142FD00026470 /* TasksViewController.swift in Sources */,
 				A9396FEE29A0E597001B0C17 /* NetworkService.swift in Sources */,
